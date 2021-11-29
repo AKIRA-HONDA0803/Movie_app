@@ -6,7 +6,7 @@ const Top = () => {
   useEffect(() => {
     fetchPopularData().then((res) => {
       console.log('data', res)
-    )}
+    })
   }, [])
   return (
     <Layout>
