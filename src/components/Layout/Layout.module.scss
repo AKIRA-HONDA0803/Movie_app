@@ -1,0 +1,16 @@
+.wrapper {
+  height: 100vh;
+  // divの中身がなくてもdivの全体が広がる
+  min-height: 100vh;
+  display: flex;
+  // flexアイテムが縦に並ぶ
+  flex-direction: column;
+  background: #181818;
+  .main {
+    padding-top: 56px;
+    display: flex;
+    flex: 1;
+    width:100%;
+    background: #181818;
+  }
+}
