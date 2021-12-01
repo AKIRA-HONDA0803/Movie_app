@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { fetchSelectedData } from '../../apis/index'
 import { Store } from '../../store/index'
+import VideoPlay from '../VideoPlay/VideoPlay'
 // useLocationを使用することで現在のurlのパスやサーチパラメーターなどの情報を取得できる
 const VideoDetail = () => {
   const { globalState, setGlobalState } = useContext(Store)
@@ -18,11 +19,12 @@ const VideoDetail = () => {
     setSelectedVideo()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  return (
+  // idがなければno dataを返す
+  return globalState.selected ? (
     <div>
-      
+      <VideoPlay id={globalState.selected.id} />
     </div>
-  )
+  ) : (<span>no data</span>)
 }
 
 export default VideoDetail
