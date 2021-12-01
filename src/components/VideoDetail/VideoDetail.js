@@ -4,6 +4,7 @@ import { fetchSelectedData } from '../../apis/index'
 import { Store } from '../../store/index'
 import VideoPlay from '../VideoPlay/VideoPlay'
 import Style from './VideoDetail.module.scss'
+import Linkify from 'react-linkify'
 
 // useLocationを使用することで現在のurlのパスやサーチパラメーターなどの情報を取得できる
 const VideoDetail = () => {
@@ -28,7 +29,10 @@ const VideoDetail = () => {
       <p>{globalState.selected.snippet.title}</p>
       <hr />
       {/* <pre></pre>は整形済みの文をそのまま表示する */}
+      {/* urlに対してリンクを追加する */}
+      <Linkify>
       <pre>{globalState.selected.snippet.description}</pre>
+      </Linkify>
     </div>
   ) : (<span>no data</span>)
 }
