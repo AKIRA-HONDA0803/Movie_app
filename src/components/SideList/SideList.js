@@ -6,6 +6,7 @@ import Style from './SideList.module.scss'
 
 const SideList = () => {
   const { globalState, setGlobalState } = useContext(Store)
+  
   const setRelatedVideo = async (id) => {
     await fetchRelatedData(id).then((res) => {
       setGlobalState({type: 'SET_RELATED', payload: {related: res.data.items}})

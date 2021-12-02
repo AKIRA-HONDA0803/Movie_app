@@ -9,6 +9,8 @@ import Linkify from 'react-linkify'
 // useLocationを使用することで現在のurlのパスやサーチパラメーターなどの情報を取得できる
 const VideoDetail = () => {
   const { globalState, setGlobalState } = useContext(Store)
+
+  
   const location = useLocation()
   const setSelectedVideo = async () => {
     const searchParams = new URLSearchParams(location.search)
