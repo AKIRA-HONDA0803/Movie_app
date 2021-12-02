@@ -21,7 +21,7 @@ const VideoDetail = () => {
   useEffect(() => {
     setSelectedVideo()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [location.search])
   // idがなければno dataを返す
   return globalState.selected && globalState.selected.id ? (
     <div className={Style.wrap}>
