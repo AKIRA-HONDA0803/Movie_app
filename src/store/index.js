@@ -3,7 +3,8 @@ import React, { createContext, useReducer } from 'react'
 const initialState = {
   popular: [],
   related: [],
-  selected: {}
+  selected: {},
+  term: ''
 }
 // initialStateの中に複数のStateが含まれる場合は、必ずスプレッド構文を使って...stateを追加してから更新を行う
 
@@ -15,6 +16,8 @@ const reducer = (state, action) => {
       return {...state, related: action.payload.related }
     case 'SET_SELECTED':
       return {...state, selected: action.payload.selected }
+    case 'SET_TERM':
+      return {...state, term: action.payload.term}
     default:
       return state
   }
