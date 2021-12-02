@@ -7,16 +7,16 @@ import Style from './SideList.module.scss'
 const SideList = () => {
   const { globalState, setGlobalState } = useContext(Store)
   
-  const setRelatedVideo = async (id) => {
-    await fetchRelatedData(id).then((res) => {
-      setGlobalState({type: 'SET_RELATED', payload: {related: res.data.items}})
-    })
-  }
-  useEffect(() => {
-    setRelatedVideo(globalState.selected.id)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [globalState.selected])
-  // ↑動画を選択する度に関連動画を再取得する
+  // const setRelatedVideo = async (id) => {
+  //   await fetchRelatedData(id).then((res) => {
+  //     setGlobalState({type: 'SET_RELATED', payload: {related: res.data.items}})
+  //   })
+  // }
+  // useEffect(() => {
+  //   setRelatedVideo(globalState.selected.id)
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [globalState.selected])
+  // // ↑動画を選択する度に関連動画を再取得する
   return (
     <div className={Style.sidenav}>
       {
